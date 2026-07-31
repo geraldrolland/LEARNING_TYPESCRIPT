@@ -17,6 +17,8 @@ console.log(user.id);
 console.log(user.name);
 console.log(user.email);
 
+// correct
+
 //2
 type Product = {
     name: string;
@@ -30,11 +32,13 @@ const product: Product = {
     price: 25000,
     quantity: 5,
     instock: true
-}:
+}
 
 const totalinventoryValue = product.price*product.quantity;
 
 console.log('total Inventory Value:', totalinventoryValue);
+// correct
+
 
 //3 Casting JSON DATA
 type Book ={
@@ -52,6 +56,8 @@ console.log(parsed.title);
 console.log(parsed.author);
 console.log(parsed.year);
 
+// correct
+
 //4
 type Employee = {
     employeeid: number;
@@ -67,10 +73,13 @@ const Employee: Employee={
     salary: 1000000
 };
 
-function updateDepartment(emp:Employee,newDepartment:string): void{emp.department = newDepartment;}
+function updateDepartment(emp: Employee, newDepartment: string): void{emp.department = newDepartment;
+
+}
 
 updateDepartment(Employee, 'HR');
 console.log(Employee);
+//
 
 //5
 const inputElement = document.getElementById('username') as HTMLInputElement;
@@ -78,5 +87,7 @@ const inputElement = document.getElementById('username') as HTMLInputElement;
 console.log(inputElement.value);
 
 inputElement.value = 'New Username';
+
+// correct
 
 
