@@ -5,21 +5,24 @@ interface user {
     email: string;
 }
 
-class UserRepository<T extends {id: number}>
-{private items:T[]=[]; 
-    add(item:T):void {
+class UserRepository<T extends {id: number}>{
+  private items:T[]=[]; // [{id: 2}, {id: 3}]
+
+    add(item:T): void {
         this.items.push(item);
     }
-
-findByid(id: number): T|undefined{
+    
+    findByid(id: number): T | undefined {
     return this.items.find(item=>item.id===id);
-}
-removeByid(id: number): void {
+    }
+    removeByid(id: number): void {
     this.items = this.items.filter(item =>item.id !== id);
-}
-getAll(): T[] {return this.items;
-}
-}
+    }
+
+    getAll(): T[] {
+    return this.items;
+    }
+  }
 
 const userRepo = new UserRepository<user>();
 
@@ -28,6 +31,7 @@ userRepo.add({id:2, name:"jane", email:"jane@test.com"});
 
 console.log(userRepo.findByid(1));
 console.log(userRepo.getAll())
+// correct
 
 
 //2
@@ -37,11 +41,11 @@ interface ApiResponse<T> {
   data: T;
 }
 
-interface User {
-  id: number;
-  name: string;
-  email: string;
-}
+// interface User {
+//   id: number;
+//   name: string;
+//   email: string;
+// }
 
 interface Product {
   id: number;
@@ -55,18 +59,18 @@ interface Order {
   quantity: number;
 }
 
-// List of users
-const userResponse: ApiResponse<User[]> = {
-  success: true,
-  message: "Users retrieved successfully",
-  data: [
-    {
-      id: 1,
-      name: "John",
-      email: "john@example.com"
-    }
-  ]
-};
+// // List of users
+// const userResponse: ApiResponse<User[]> = {
+//   success: true,
+//   message: "Users retrieved successfully",
+//   data: [
+//     {
+//       id: 1,
+//       name: "John",
+//       email: "john@example.com"
+//     }
+//   ]
+// };
 
 // Single product
 const productResponse: ApiResponse<Product> = {
@@ -131,6 +135,8 @@ console.log(scores.has("Jane"));
 
 scores.remove("Jane");
 
+// correct
+
 //4
 interface PaginatedData<T> {
   currentPage: number;
@@ -163,7 +169,7 @@ const usersPage: PaginatedData<User> = {
   totalItems: 50,
   data: [
     {
-      id2: 1,
+      id: 1,
       name: "John"
     }
   ]
@@ -247,7 +253,7 @@ class GenericRepository<T extends { id: number }>
       existing => existing.id === id
     );
 
-    if (index === -1) {
+    if (index == -1) {
       return undefined;
     }
 
@@ -266,7 +272,7 @@ class GenericRepository<T extends { id: number }>
 const studentRepository = new GenericRepository<Student>();
 
 studentRepository.create({
-  id1 : 1,
+  id: 1,
   name: "Alice",
   age: 20
 });
@@ -288,6 +294,8 @@ courseRepository.create({
   title: "TypeScript",
   duration: 8
 });
+
+// correct
 
 //6
 interface Stack<T> {
@@ -358,6 +366,8 @@ tasks.push({
 
 console.log(tasks.peek());
 
+// correct
+
 //7
 interface SortableItem {
   sortValue: string | number;
@@ -378,10 +388,11 @@ function sortItems<T extends SortableItem>(items: T[]): T[] {
 }
 
 //
-interface Student extends SortableItem {
-  id: number;
-  name: string;
-  sortValue: string;
-}
+// interface Student extends SortableItem {
+//   id: number;
+//   name: string;
+//   sortValue: string;
+// }
 
+// correct
 

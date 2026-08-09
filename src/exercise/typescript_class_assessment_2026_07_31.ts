@@ -32,11 +32,8 @@ const product: Product = {
     price: 25000,
     quantity: 5,
     instock: true
-<<<<<<< HEAD
+
 };
-=======
-}
->>>>>>> 14a4bd6cf8336a2e464402a44874d0fa8d13299c
 
 const totalinventoryValue = product.price*product.quantity;
 
@@ -70,20 +67,23 @@ type Employee = {
     salary: Number;
 }
 
-const Employee: Employee={
+const employee: Employee={
     employeeid: 101,
     fullName:'giwa hex',
     department:'IT',
     salary: 1000000
 };
 
-function updateDepartment(emp: Employee, newDepartment: string): void{emp.department = newDepartment;
+function updateDepartment(emp: Employee, newDepartment: string): void {
+  emp.department = newDepartment;
 
 }
 
-updateDepartment(Employee, 'HR');
-console.log(Employee);
+updateDepartment(employee, 'HR');
+console.log(employee);
 //
+
+// correct
 
 //5
 const inputElement = document.getElementById('username') as HTMLInputElement;
@@ -92,7 +92,8 @@ console.log(inputElement.value);
 
 inputElement.value = 'New Username';
 
-<<<<<<< HEAD
+// correct
+
 //6
 type Student = {
   name: string;
@@ -100,10 +101,7 @@ type Student = {
   grade: string;
   courses: string[];
 };
-=======
-// correct
 
->>>>>>> 14a4bd6cf8336a2e464402a44874d0fa8d13299c
 
 const student: Student = {
   name: "John Doe",
@@ -119,6 +117,8 @@ student.courses.push("Computer Science");
 student.courses = student.courses.filter(course => course !== "Physics");
 
 console.log(student);
+// correct
+
 
 //7
 type Customer = {
@@ -139,6 +139,7 @@ const activeCustomers = customers.filter(customer => customer.active);
 
 console.log(activeCustomers);
 
+// correct
 
 
 //9
@@ -160,6 +161,9 @@ const settings = externalConfig as Settings;
 settings.theme = "Dark";
 
 console.log(settings);
+
+// correct
+
 
 //10
 type Customers = {
@@ -211,3 +215,5 @@ console.log("Total Cost: $" + totalCost);
 order.status = "Paid";
 
 console.log("Updated Order:", order);
+
+// correct
