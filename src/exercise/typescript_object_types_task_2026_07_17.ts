@@ -7,6 +7,7 @@ let studentScores: number[] = [85, 90, 78, 88, 92, 76, 81, 95, 87, 79, 84, 91, 8
 
 studentScores.push(96); // Allowed
 // studentScores.push("A"); //  Error: Argument of type 'string' is not assignable to type 'number'.
+// correct
 
 
 // 2. Favorite Programming Languages
@@ -23,6 +24,7 @@ favoriteLanguages.push("Java");
 //  TypeScript Error:
 // Argument of type 'number' is not assignable to parameter of type 'string'.
 
+// correct
 
 // 3. Mixed Product Categories
 let productNames: string[] = [
@@ -42,6 +44,8 @@ productPrices.push(50);
 
 // productNames.push(500);    //  Error
 // productPrices.push("200"); //  Error
+
+// correct
 
 
 // 4. Employee Records
@@ -66,6 +70,8 @@ const exists = employees.includes(employeeName);
 
 console.log(`${employeeName} exists: ${exists}`);
 
+// correct
+
 
 // 
 // Tuple Types (3 Exercises)
@@ -79,7 +85,7 @@ let student: [number, string, number] = [
 ];
 
 console.log(student);
-
+// correct
 
 // 6. GPS Coordinates
 let location: readonly [number, number] = [
@@ -90,6 +96,7 @@ let location: readonly [number, number] = [
 // location.push(10);
 //  Error because readonly tuple cannot be modified.
 
+// correct
 
 // 7. Product Inventory
 let product: [number, string, number, boolean] = [
@@ -101,6 +108,7 @@ let product: [number, string, number, boolean] = [
 
 console.log(product);
 
+// correct
 
 // 
 // Object Types (5 Exercises)
@@ -119,21 +127,28 @@ let user: {
   isVerified: true
 };
 
+// correct
+
 
 // 9. Online Course
-let course: {
+
+type courseType = {
   title: string;
   instructor: string;
   price: number;
   numberOfStudents: number;
   published: boolean;
-} = {
+}
+
+let course: courseType  = {
   title: "Learn TypeScript",
   instructor: "Jane Doe",
   price: 49.99,
   numberOfStudents: 1200,
   published: true
 };
+
+// correct
 
 
 // 10. Car Information
@@ -151,6 +166,7 @@ let car: {
   automatic: true
 };
 
+// correct
 
 // 11. Company Employee
 let employee: {
@@ -170,6 +186,7 @@ let employee: {
 employee.skills.push("Node.js");
 // employee.skills.push(100);
 
+// correct
 
 // 12. Shopping Cart Item
 let cartItem: {
@@ -186,6 +203,7 @@ let cartItem: {
   inStock: true
 };
 
+// correct
 
 //
 // Enum Types (2 Exercises)
@@ -204,14 +222,15 @@ let currentOrderStatus: OrderStatus = OrderStatus.Processing;
 
 console.log(currentOrderStatus);
 
+// correct
 
 // 14. User Roles
 enum UserRole {
-  Admin,
-  Moderator,
-  Editor,
-  Author,
-  Subscriber
+  Admin = "admin",
+  Moderator = "moderator",
+  Editor = "editor",
+  Author = "author",
+  Subscriber = "subscriber"
 }
 
 let user1 = {
@@ -240,3 +259,5 @@ let user5 = {
 };
 
 console.log(user1, user2, user3, user4, user5);
+
+// correct

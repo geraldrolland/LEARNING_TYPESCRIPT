@@ -25,6 +25,8 @@ student2.displayInfo();
 student1.updateAge(22);
 student1.displayInfo();
 
+// correct
+
 //2
 class BankAccount {
   private balance: number;
@@ -56,11 +58,14 @@ class BankAccount {
   }
 }
 
+
 const account = new BankAccount("1001", "Alice", 500);
 
 account.deposit(200);
 account.withdraw(100);
 account.checkBalance();
+// correct
+
 
 //3
 class Book {
@@ -89,11 +94,11 @@ class Book {
 
   displayDetails(): void {
     console.log(`
-Title: ${this.title}
-Author: ${this.author}
-ISBN: ${this.isbn}
-Available: ${this.available}
-`);
+        Title: ${this.title}
+        Author: ${this.author}
+        ISBN: ${this.isbn}
+        Available: ${this.available}
+        `);
   }
 }
 
@@ -102,6 +107,8 @@ const book = new Book("Clean Code", "Robert Martin", "12345");
 book.borrow();
 book.borrow();
 book.returnBook();
+
+// correct
 
 //4
 class Employee {
@@ -136,6 +143,8 @@ const emp = new Employee(1, "John", "IT", 4000);
 emp.displayInfo();
 emp.increaseSalary(10);
 emp.displayInfo();
+
+// correct
 
 //5
 class Vehicle {
@@ -186,6 +195,8 @@ car.honk();
 bike.displayInfo();
 bike.wheelie();
 
+// correct
+
 //6
 class Product {
   constructor(
@@ -196,10 +207,15 @@ class Product {
   ) {}
 
   updateStock(quantity: number): void {
-    if (this.stock + quantity < 0) {
-      console.log("Stock cannot be negative.");
+    if (quantity < 1) {
+      console.log("quantity cannot be negative");
       return;
-    }
+    } // corrected code
+
+    // if (this.stock + quantity < 0) {
+    //   console.log("Stock cannot be negative.");
+    //   return;
+    // }
 
     this.stock += quantity;
   }
@@ -223,6 +239,7 @@ const product = new Product("Laptop", 1200, 10, "Electronics");
 product.applyDiscount(15);
 product.updateStock(-2);
 product.displayDetails();
+// correct
 
 //7
 
@@ -258,3 +275,4 @@ const payments: Payment[] = [
 
 payments.forEach((payment) => payment.processPayment(500));
 
+// correct
