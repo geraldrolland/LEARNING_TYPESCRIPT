@@ -5,6 +5,8 @@
     // "rootDir": "./src",
     // "outDir": "./dist",
 
+    // "strictNullChecks": true,
+
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
     "module": "nodenext",

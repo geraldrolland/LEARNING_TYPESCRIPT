@@ -16,7 +16,7 @@ const userUpdate: UserUpdate = {
   age: 30,
 };
 
-
+// correct
 
 // 2. Required<T> – Complete Product Information
 
@@ -38,6 +38,8 @@ const product: CompleteProduct = {
   discount: 10,
 };
 
+// correct
+
 
 
 // 3. Readonly<T> – Application Configuration
@@ -58,6 +60,8 @@ const config: ReadonlyConfig = {
   environment: "production",
   debug: false,
 };
+
+// correct
 
 
 
@@ -87,6 +91,8 @@ const employeeSummary: EmployeeSummary = {
   jobTitle: "Frontend Developer",
 };
 
+//correct
+
 
 
 // 5. Omit<T, K> – Public User Information
@@ -108,6 +114,8 @@ const publicUser: PublicUser = {
   email: "john@example.com",
 };
 
+// correct
+
 
 
 // 6. Record<K, T> – Product Inventory
@@ -127,7 +135,7 @@ const inventory: Inventory = {
   food: 200,
 };
 
-
+// correct
 
 // 7. Exclude<T, U> – Permission System
 
@@ -145,6 +153,7 @@ type RegularPermission = Exclude<
 
 const permission: RegularPermission = "read";
 
+// correct
 
 // 8. Extract<T, U> – Supported Events
 
@@ -165,6 +174,7 @@ type KeyboardEvent = Extract<
 
 const keyboardEvent: KeyboardEvent = "keyDown";
 
+// correct
 
 
 // 9. NonNullable<T> – API Response Data
@@ -189,6 +199,7 @@ const userData: UserData = {
   token: "abc123",
 };
 
+// correct
 
 
 // 10. ReturnType<T> – Service Functions
@@ -232,6 +243,7 @@ const newProduct: ProductResult = createProduct();
 
 const orders: OrdersResult = retrieveOrders();
 
+// correct
 
 
 // 11. Parameters<T> – Function Arguments
@@ -257,6 +269,8 @@ function logUserUpdate(
 }
 
 logUserUpdate(1, "admin", true);
+
+// correct
 
 
 
@@ -302,3 +316,5 @@ const db = createDatabaseConnection(
 );
 
 db.connect();
+
+// correct
