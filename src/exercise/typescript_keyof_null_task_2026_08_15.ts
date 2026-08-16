@@ -16,6 +16,7 @@ validProperty = "name";   //
 validProperty = "email";  // 
 validProperty = "age";    // 
 
+// correct
 
 
 // 2. Generic Property Getter
@@ -35,7 +36,7 @@ const user: User = {
 const userName = getProperty(user, "name");   
 const userAge = getProperty(user, "age");     
 
-
+// correct
 
 // 3. Update Specific Property
 
@@ -74,6 +75,8 @@ const strictAgeUpdate: StrictUpdate<User> = {
 
 
 
+// correct
+
 
 // 4. Nested Configuration Access
 
@@ -99,7 +102,7 @@ configKey = "database";
 configKey = "server";   
 configKey = "logging";  
 
-
+// correct
 
 // 5. Sort Object Properties
 
@@ -123,7 +126,7 @@ const users: User[] = [
 const sortedByName = sortBy(users, "name");
 const sortedByAge = sortBy(users, "age");  
     
-
+// correct
 
 // 6. Nullable User Profile
 
@@ -154,6 +157,7 @@ const profile: UserProfile = {
 
 console.log(displayProfile(profile));
 
+// correct
 
 // 7. Nullable API Response
 
@@ -195,6 +199,7 @@ const emptyResponse: ApiResponse<UserData> = {
 console.log(handleUserResponse(successfulResponse));
 console.log(handleUserResponse(emptyResponse));
 
+// correct
 
 // 8. Strict Null Checking
 
@@ -211,7 +216,9 @@ nullableText = null;
 nullableText = "Hi";  
 
 nullableNumber = null; 
-nullableNumber = 50;   
+nullableNumber = 50;  
+
+// correct
 
 
 
@@ -229,6 +236,8 @@ console.log(greetUser("Alice"));
 
 
 console.log(greetUser(null));
+
+// correct
 
 
 
@@ -258,3 +267,4 @@ updateProperty(person, "age", null);
 updateProperty(person, "active", false); 
 updateProperty(person, "active", null);  
 
+// correct
