@@ -1,14 +1,14 @@
 //  User Profie casting
 type User = {
-    id: number;
-    name: string;
-    email: string;
+  id: number;
+  name: string;
+  email: string;
 };
 
-const apiData: unknown ={
-    id:1,
-    name: 'Abdulrahman',
-    email:'abdulrahman449@gmail.com'
+const apiData: unknown = {
+  id: 1,
+  name: 'Abdulrahman',
+  email: 'abdulrahman449@gmail.com'
 };
 
 const user = apiData as User;
@@ -21,37 +21,39 @@ console.log(user.email);
 
 //2
 type Product = {
-    name: string;
-    price: number;
-    quantity: number;
-    instock: boolean;
+  name: string;
+  price: number;
+  quantity: number;
+  instock: boolean;
 };
 
 const product: Product = {
-    name: 'Keyboard',
-    price: 25000,
-    quantity: 5,
-    instock: true
+  name: 'Keyboard',
+  price: 25000,
+  quantity: 5,
+  instock: true
 
 };
 
-const totalinventoryValue = product.price*product.quantity;
+
+
+const totalinventoryValue = product.price * product.quantity;
 
 console.log('total Inventory Value:', totalinventoryValue);
 // correct
 
 
 //3 Casting JSON DATA
-type Book ={
-    title: string;
-    author:string;
-    year:number;
+type Book = {
+  title: string;
+  author: string;
+  year: number;
 
 };
 
 const jsonString = '{"title":"Titanic","author":"giwa","year":2026}';
 
-const parsed = JSON.parse(jsonString)as Book;
+const parsed = JSON.parse(jsonString) as Book;
 
 console.log(parsed.title);
 console.log(parsed.author);
@@ -61,17 +63,17 @@ console.log(parsed.year);
 
 //4
 type Employee = {
-    employeeid: number;
-    fullName: string;
-    department: string;
-    salary: Number;
+  employeeid: number;
+  fullName: string;
+  department: string;
+  salary: Number;
 }
 
-const employee: Employee={
-    employeeid: 101,
-    fullName:'giwa hex',
-    department:'IT',
-    salary: 1000000
+const Employee: Employee = {
+  employeeid: 101,
+  fullName: 'giwa hex',
+  department: 'IT',
+  salary: 1000000
 };
 
 function updateDepartment(emp: Employee, newDepartment: string): void {
@@ -79,11 +81,9 @@ function updateDepartment(emp: Employee, newDepartment: string): void {
 
 }
 
-updateDepartment(employee, 'HR');
-console.log(employee);
+updateDepartment(Employee, 'HR');
+console.log(Employee);
 //
-
-// correct
 
 //5
 const inputElement = document.getElementById('username') as HTMLInputElement;
@@ -92,7 +92,6 @@ console.log(inputElement.value);
 
 inputElement.value = 'New Username';
 
-// correct
 
 //6
 type Student = {
@@ -101,6 +100,9 @@ type Student = {
   grade: string;
   courses: string[];
 };
+
+// correct
+
 
 
 const student: Student = {
@@ -117,8 +119,6 @@ student.courses.push("Computer Science");
 student.courses = student.courses.filter(course => course !== "Physics");
 
 console.log(student);
-// correct
-
 
 //7
 type Customer = {
@@ -139,7 +139,6 @@ const activeCustomers = customers.filter(customer => customer.active);
 
 console.log(activeCustomers);
 
-// correct
 
 
 //9
@@ -161,9 +160,6 @@ const settings = externalConfig as Settings;
 settings.theme = "Dark";
 
 console.log(settings);
-
-// correct
-
 
 //10
 type Customers = {
@@ -215,5 +211,3 @@ console.log("Total Cost: $" + totalCost);
 order.status = "Paid";
 
 console.log("Updated Order:", order);
-
-// correct
