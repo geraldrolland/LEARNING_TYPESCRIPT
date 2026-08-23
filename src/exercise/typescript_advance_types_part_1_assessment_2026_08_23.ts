@@ -32,6 +32,8 @@ const user4: OptionalUser = {
   age: 25,
 };
 
+// correct
+
 
 //2
 type Product = {
@@ -55,6 +57,8 @@ const product: ReadonlyProduct = {
   category: "Electronics",
   inStock: true,
 };
+
+// correct
 
 //3
 type AppSettings = {
@@ -83,6 +87,9 @@ type Example = BooleanProperties<{
   isAdmin: boolean;
 }>;
 
+// correct
+
+
 //4
 type Profile = {
   name: string;
@@ -104,6 +111,9 @@ const profile: NullableProfile = {
   isVerified: null,
 };
 
+
+// correct
+
 //5
 type User1 = {
   id: number;
@@ -121,6 +131,8 @@ type UserUpdate<T> = {
 };
 
 type UserUpdateRequest = UserUpdate<User>;
+
+// correct
 
 //6
 type Data = {
@@ -140,3 +152,5 @@ type ToArray<T> = {
 };
 
 type ArrayData = ToArray<Data>;
+
+// correct
